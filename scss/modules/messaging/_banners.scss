@@ -1,5 +1,5 @@
 .p-message_pane {
-  .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before {
+  .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider {
     background: $color-base;
     border-bottom: 1px solid $color-base;
   }
@@ -7,10 +7,13 @@
   .p-message_pane__top_banners:not(:empty) + div .c-message_list {
     &:not(.c-virtual_list--scrollbar),
     &.c-virtual_list--scrollbar > .c-scrollbar__hider {
-      &:before {
-        box-shadow: 0 32px $color-base;
-      }
+      box-shadow: 0 32px $color-base;
     }
+  }
+
+  .c-message_list:not(.c-virtual_list--scrollbar):before,
+  .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before {
+    background-color: $color-base;
   }
 
   &__foreword__description,
