@@ -12,7 +12,7 @@
   }
 
   .c-message_list:not(.c-virtual_list--scrollbar):before,
-  .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before {
+  .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider::before {
     background-color: $color-base;
   }
 
