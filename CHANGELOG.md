@@ -1,5 +1,7 @@
 # Changelog
 
+## 2018-04-17
+* Fixed background color for messages panel
 
 ## 2018-02-09
 * Support for new mention classes ([#141](https://github.com/laCour/slack-night-mode/issues/141))

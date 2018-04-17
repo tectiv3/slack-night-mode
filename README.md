@@ -9,6 +9,33 @@ Unfortunately, if you're using the desktop version of Slack, you will not** be a
 
 ** However you can still use this theme using this little hack: https://github.com/laCour/slack-night-mode/issues/73#issuecomment-242707078
 
+#### Instructions for macOS
+- Open `/Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js`
+- Add this snippet to the bottom of that file
+- Replace `/absolute/path/to` with path to your `black.css`
+- You will have to re-add this everytime Slack update itself.
+```js
+document.addEventListener('DOMContentLoaded', function() {
+  var fs = require('fs'),
+  filePath = '/absolute/path/to/black.css';
+
+  fs.readFile(filePath, {encoding: 'utf-8'}, function(err, data) {
+    if (err) {
+        console.log(err);
+        return
+    }
+      var css = document.createElement('style');
+      css.type = "text/css";
+      if (css.styleSheet){
+        css.styleSheet.cssText = data;
+      } else {
+        css.appendChild(document.createTextNode(data));
+      }
+      document.getElementsByTagName('head')[0].appendChild(css);
+  })
+});
+```
+
 ## Themes
 
 ### Supported
