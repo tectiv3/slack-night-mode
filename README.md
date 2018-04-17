@@ -13,7 +13,7 @@ Unfortunately, if you're using the desktop version of Slack, you will not** be a
 - Open `/Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js`
 - Add this snippet to the bottom of that file
 - Replace `/absolute/path/to` with path to your `black.css`
-- You will have to re-add this everytime Slack update itself.
+- You will have to re-add this every time Slack updates itself.
 ```js
 document.addEventListener('DOMContentLoaded', function() {
   var fs = require('fs'),
